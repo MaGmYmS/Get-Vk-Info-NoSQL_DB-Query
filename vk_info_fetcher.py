@@ -4,7 +4,6 @@ import concurrent.futures
 import json
 import argparse
 import logging
-from tqdm import tqdm
 from py2neo import Graph, Node, Relationship
 
 from GetVkInfo import GetVkInfo
@@ -123,7 +122,6 @@ def save_info_to_json(graph, user_info, followers, subscriptions, group_details,
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="VK User Info Fetcher with Neo4j Integration")
     parser.add_argument('--user_id', type=str, default=None, help='VK User ID')
-    parser.add_argument('--output', type=str, default=r'D:\result.json', help='Output JSON file')
     args = parser.parse_args()
 
     # Ваш токен доступа
